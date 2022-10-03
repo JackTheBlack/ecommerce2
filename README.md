@@ -1,3 +1,8 @@
+
+Variable de entorne  de la Api em el Backend : MONGODB_URI=mongodb+srv://jack:1234@cluster0.z70zv.mongodb.net/api_db?retryWrites=true&w=majority;
+
+El Back end corre en Node  ecommerce2/backend npm start
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
