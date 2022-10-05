@@ -2,7 +2,7 @@ const express= require('express');
 const mongoose = require("mongoose");
 const products= require("./routes/getProducts.js");
 const CORS = require("cors");
-
+const connect= require("./conexion/config");
 require("DOTENV").config();
 
 
@@ -17,11 +17,12 @@ const corsOptions = {
   };
 app.use(CORS(corsOptions));
 
-app.use(products);
+
 //routes
-app.get("/",(req,res)=>{res.send("welcome to my api")});
+app.use(products);
+app.get("/",(req,res)=>{ res.send("welcome to my api")});
 app.listen(port, ()=>console.log("escuchando en puerpo ",port));
 
 
 //connection
-mongoose.connect(process.env.MONGODB_URI).then(()=>console.log("conectado a mongodb")).catch(()=>console.log(e))
+connect();

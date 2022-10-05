@@ -11,9 +11,10 @@ export default function ProductList(){
     useEffect(() => {
       if(productList===null){
        try{
-         
-        axios.get(`http://localhost:9000/products/${router.query.product}`).then((response) => {
-          setProductList(response.data);           
+        
+        axios.get(`http://localhost:9000/products/${router.query.product}`,{params:{type:"TOPES"}}).then((response) => {
+          setProductList(response.data);      
+          console.log("dsdss")     
              
           
         });

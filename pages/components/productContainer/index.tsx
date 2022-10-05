@@ -3,13 +3,13 @@ import styles from '../../styles/globals.css'
 import axios from "axios";
 import Link from "next/link";
 
-export default function ProductContainer({title}){
+export default function ProductContainer({type}){
 
         const [productList,setProductList]=useState(null);
 
         useEffect(() => {
           try{
-            axios.get(`http://localhost:9000/products/${title}`).then((response) => {
+            axios.get(`http://localhost:9000/products/${type}`,{params:{type:type}} ).then((response) => {
               setProductList(response.data);           
              
             });
@@ -19,7 +19,7 @@ export default function ProductContainer({title}){
             console.log(productList)
           },[]);
      
-                const path:String=`/productList?product=${title}`;
+                const path:String=`/productList?product=${type}`;
 
         return(
 
@@ -30,7 +30,7 @@ export default function ProductContainer({title}){
                    <div className='col'>
                     <Link href={path}>
                    
-                       <h5 style={{  marginTop:'10px'}}><button className='transparente'> {title}</button> </h5>
+                       <h5 style={{  marginTop:'10px'}}><button className='transparente'> {type}</button> </h5>
                    
                    
                    </Link>

@@ -1,6 +1,8 @@
 const express= require('express')
 const productSchema =require("../models/products");
-
+const {
+	getProductsByType
+} = require('../controllers/products');
 const router=express.Router();
 
 
@@ -10,12 +12,12 @@ router.get("/products",(req,res)=>{
 
 
    
-router.get("/products/topes",(req,res)=>{
-    productSchema.find({type:"TOPES"}).then((data)=>res.json(data)).catch((error)=>console.log(error))})
+router.get("/products/topes",getProductsByType)
 
-   // res.send('todo ok')})
+   // res.send('todo ok')})er
 
-   router.get("/products/discos",(req,res)=>{
-    productSchema.find({type:"DISCOS"}).then((data)=>res.json(data)).catch((error)=>console.log(error))})
-module.exports=router; 
+   router.get("/products/discos",getProductsByType)
+
+
+    module.exports=router; 
 
