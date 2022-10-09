@@ -1,18 +1,17 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import ItemContainer from './components/itemContainer'
 import NavBar from './components/navbar'
 import Parallaximg from './components/parallax'
 import ProductContainer from './components/productContainer'
-import Slider from './components/slider'
+import Sliderr from './components/slider'
 import Link from "next/link"
 
 
 
 export default function Home() {
   return (
-    <>
+    <div>
     <header>
     <NavBar/>
     </header>
@@ -23,8 +22,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
      
       </Head>
-      <div>
-          <Slider/>
+      <div  >
+          <Sliderr/>
         </div>
     
      
@@ -54,11 +53,11 @@ export default function Home() {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <img src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-    </>
+    </div>
   )
 }

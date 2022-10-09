@@ -7,16 +7,20 @@ export default function ProductContainer({type}){
 
         const [productList,setProductList]=useState(null);
 
+        const getProducts =async()=>{
+
+        try{
+          await axios.get(`http://localhost:9000/products/${type}`,{params:{type:type}} ).then((response) => {
+            setProductList(response.data);})
+      } catch(e){
+
+        }
+        }
+
         useEffect(() => {
-          try{
-            axios.get(`http://localhost:9000/products/${type}`,{params:{type:type}} ).then((response) => {
-              setProductList(response.data);           
-             
-            });
-            }catch(e){
-              console.log(e)
-            }
-            console.log(productList)
+        
+          getProducts()
+           
           },[]);
      
                 const path:String=`/productList?product=${type}`;
