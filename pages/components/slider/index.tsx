@@ -1,8 +1,9 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import React from "react";
-import Slide1 from "./slide1";
+
+import React,{useState} from "react";
+import Slide1 from "./slides/slide1";
+import Slide2 from "./slides/slide2";
+import { global } from 'styled-jsx/css';
+import SlideContext from "./context/slideContext";
 export default function Sliderr(){
 
 
@@ -14,29 +15,27 @@ export default function Sliderr(){
     <img   src="https://i.pinimg.com/474x/99/0e/21/990e213c150773565400d23d47d2eb45.jpg"  /> 
   );
 
+  const [slide,setSlide]=useState(1);
  
-  var settings = {
-    dots: true,
-    arrows:false,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    autoplay:true,
-    autoplaySpeed:2500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-   
-  };
-  return (<div style={{justifyContent:"center",alignItems:"center", paddingBottom:"20px"}} >
-    <Slider {...settings}>
-      <div style={{justifyContent:"center", textAlign:"center", alignItems:"center" }}>
-         <Slide1/>
-      </div>
-      <div style={{justifyContent:"center", textAlign:"center", alignItems:"center" }}>
-         <Slide1/>
-      </div>
-    
-    </Slider>
+ 
+  return (
+  
+  
+    <SlideContext.Provider value={{slide:Number,setSlide}}>
+ 
+
+  
+  <div style={{justifyContent:"center",alignItems:"center", paddingBottom:"20px"}} >
+   {slide===1? <div className="fade-in2">
+  <Slide1/>
+  </div>:
+  <div  style={{ top:"0%"}} className="fade-in2" >
+
+  <Slide2/>
+  </div>
+  } 
+
     </div>
+    </SlideContext.Provider>
   );
 }

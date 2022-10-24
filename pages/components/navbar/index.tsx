@@ -7,7 +7,7 @@ const router=useRouter();
 
     return(
         <>
-        <nav style={{backgroundColor:"#000000"}} >
+        <nav className="navbar fixed-top" style={{backgroundColor:"#000000"}} >
  <button className="transparente" onClick={()=>router.push("/")} ><Image src={require("../../../utils/logo.png")}  width={150} height={70} /></button>
 </nav>
 

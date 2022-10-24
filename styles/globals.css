@@ -7,20 +7,42 @@ body {
 }
 .midDiv{
   justify-Content:center;
-  text-align:"center";
-  align-items:"center";
+  text-align:center;
+  align-items:center;
   top:50%;
-  left: 50%;
+ 
   position:relative 
 
 }
 .transparente{
- padding-left : 10%; 
+ 
 background-color: Transparent;
 background-repeat:no-repeat;
 border: none;
 cursor:pointer;
 overflow: hidden;    
+}
+
+
+.fade-in {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+  animation: fadeOut 8s;
+-webkit-animation: fadeOut 8s;
+-moz-animation: fadeOut 8s;
+-o-animation: fadeOut 8s;
+-ms-animation: fadeOut 8s;
+}
+
+.fade-in2 {
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
 }
 
 
@@ -48,7 +70,7 @@ h5{
 }
 
 .puductTitle{
-  height: 20%;
+  height: 30%;
   background-color: rgb(223, 223, 223);
 }
 
@@ -61,3 +83,71 @@ h5{
     background: black;
   }
 }
+
+
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+@keyframes fadeOut {
+  0% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @-webkit-keyframes fadeOut {
+  0% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @-moz-keyframes fadeOut {
+  0% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @-o-keyframes fadeOut {
+  0% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @-ms-keyframes fadeOut {
+  0% {
+  opacity: 1;
+  }
+  100% {
+  opacity: 0;
+  }}

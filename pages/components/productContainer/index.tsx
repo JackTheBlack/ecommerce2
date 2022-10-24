@@ -28,26 +28,26 @@ export default function ProductContainer({type}){
         return(
 
             <>
-                 {productList===null?<div> <h2>cargando</h2> </div>: <><div className="puductTitle">
+                 {productList===null?<div> <h2>cargando</h2> </div>: <>
+                 <div className="puductTitle">
                  
-                 <div className='row'>
-                   <div className='col'>
+                
                     <Link href={path}>
                    
-                       <h5 style={{  marginTop:'10px'}}><button className='transparente'> {type}</button> </h5>
+                       <h5 style={{ paddingTop:"10px", paddingBottom:"10px"}}><button className='transparente'> {type}</button> </h5>
                    
                    
                    </Link>
-                   </div>
-                 </div>
+                 
               
            </div>
            <div className="container">
             <div className='row'>
-           {productList.map((p)=>
+           {productList.map((p,index)=>
+                    
                     <div className='col'>
                       <div style={{justifyContent:"center",textAlign:"center"}}>
-                      <img src={p.img} width="200px" height={200} />   <br></br>
+                      <img src={p.img} width={200} height={200} />   <br></br>
                        <span>{p.name} </span> 
                       </div>
                     </div>

@@ -13,8 +13,8 @@ export default function Parallaximg({img, section} ){
 
   
     return (
-        <Parallax bgImage={img2} >
-             <div style={{ height: 700 }}>
+        <Parallax bgImage={img2} strength={500} >
+             <div style={{ height: 500 }}>
              
                 <div className='midDiv' >
                     <button  type="button" style={{justifyContent:"center",textAlign:"center",alignItems:"center", color:"white", fontSize:"x-large"}} className="transparente">{section} </button>
